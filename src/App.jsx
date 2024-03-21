@@ -25,6 +25,9 @@ function App() {
       <BrowserRouter>
         <Routes>
             <Route exact path='/' element={<ItemListContainer/>}/>
+            <Route exact path='/productos' element={<ItemListContainer/>}/>
+            <Route exact path='/productos/:id' element={<ItemListContainer/>}/>
+            <Route exact path='/productos/:category' element={<ItemListContainer/>}/>
         </Routes>
       <NavBar /> 
       <header>

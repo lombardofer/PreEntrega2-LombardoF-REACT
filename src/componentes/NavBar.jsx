@@ -36,7 +36,8 @@ const NavBar = ({ children }) => {
                     <img src={carrito} alt="cart" className="cart" />
                 </div>
             </div>
-            {children}
+            
+        {children}
         </nav>
     );
 }

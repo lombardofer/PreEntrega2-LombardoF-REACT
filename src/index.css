@@ -1,18 +1,5 @@
-* {
-  font-family: Verdana, Geneva, Tahoma, sans-serif !important
-}
+/*establecer caracteristicas GENERALES de estilo ACA*/
 
-.nav button {
-  border-radius: 10px !important;
-  padding: 5px 5px !important;
-  margin: 10px 10px !important;
-  border: 3px !important;
-}
-
-.logo {
-  margin: 0px 0px 0px 20px!important;
-}
-
-.cart {
-  margin-right: 10px !important;
+body{
+  text-align: center;
 }

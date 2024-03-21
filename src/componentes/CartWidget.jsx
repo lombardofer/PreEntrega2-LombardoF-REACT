@@ -1,11 +1,12 @@
-import carritoimg from '../assets/img/carrito.png'
+import React from 'react';
 
-export default function Cartwidget() {
+const CartWidget = () => {
     return (
-        <>
-            <p>
-                <img class='cart' src={carritoimg} width="30px"/>4
-            </p>
-        </>
-    )
+        <div className="cart-widget">
+            <i className="fas fa-shopping-cart"></i>
+            <span className="cart-notification">8</span>
+        </div>
+    );
 }
+
+export default CartWidget;

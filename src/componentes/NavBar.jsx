@@ -1,96 +1,46 @@
-import ButtonComponent from './ButtonComponent.jsx';
-import Cartwidget from './CartWidget.jsx';
+import React from 'react';
+import carrito from '../assets/img/carrito.png';
 import logo from '../assets/img/logo.png';
+import './NavBar.css';
+import CartWidget from './CartWidget';
 
-export default function NavBar(){
-
-    const caracteristicas = [
-        {
-            color: '#084CFB',
-            texto: 'Catálogo',
-        },
-        {
-            color: '#458EFF',
-            texto: 'Contacto',
-        },
-        {
-            color: '#7ECBFF',
-            texto: 'Acerca de',
-        },
-        {
-            color: '#BEF9FF',
-            texto: 'Nuestro local',
-        },
-    ];
-
-    const dispararConsola = () => {
-        console.log('Bienvenidos!');
-    };
-
+const NavBar = ({ children }) => {
     return (
-        <>
-            <section>
-                <nav class="navbar navbar-expand-lg bg-light rounded" aria-label="Twelfth navbar example">
-                    <div>
-                        <a class="navbar-brand" href="#">
-                        <img class="logo" src={logo} width="40px" height="40px"></img>
-                        </a>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                <img src={logo} alt="loguito" width="40" height="40" class="d-inline-block align-text-top"></img>
+            
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Acerca de</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">Ubicación</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Iniciar Sesión</a>
+                        </li>
+                    </ul>
                     </div>
-                    <div class="container-fluid">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample10" aria-controls="navbarsExample10" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                        </button>
-                        
+                <div className="navbar-nav ml-auto d-flex align-items-center"> 
+                    <CartWidget />
+                    <img src={carrito} alt="cart" className="cart" />
+                </div>
+            </div>
+            {children}
+        </nav>
+    );
+}
 
-                        <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample10">
-                            <ul class="navbar-nav nav">
-                                <li class="nav-item">
-                                <a class="nav-item" href="#">
-                                    
-                                <ButtonComponent
-                                    texto={caracteristicas[0].texto}
-                                    color={caracteristicas[0].color}
-                                    reaccionarAClick={dispararConsola}
-                                />
+export default NavBar;
 
-                                </a>
-                                </li>
-                                <li class="nav-item">
-                                
-                                <ButtonComponent
-                                    texto={caracteristicas[1].texto}
-                                    color={caracteristicas[1].color}
-                                    reaccionarAClick={dispararConsola}
-                                />
 
-                                <a class="nav-item">
-                                
-                                <ButtonComponent
-                                    texto={caracteristicas[2].texto}
-                                    color={caracteristicas[2].color}
-                                    reaccionarAClick={dispararConsola}
-                                />
-
-                                </a>
-                                <a class="nav-item">
-                                
-                                <ButtonComponent
-                                    texto={caracteristicas[3].texto}
-                                    color={caracteristicas[3].color}
-                                    reaccionarAClick={dispararConsola}
-                                />
-
-                                </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <Cartwidget />
-                        </div>
-                    </div>
-                    
-                </nav>
-            </section>
-        </>
-    )
-} 
